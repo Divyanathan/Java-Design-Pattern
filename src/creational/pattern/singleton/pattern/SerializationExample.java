@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Some time we need to implement Serializable in order to pass to other class.
  * But problem with Serialization when you DeSerialize object it creates the new instance.
- * In order to avoid that we suppose use #readResolve method inorder overcome from that
+ * In order to avoid that we suppose use #readResolve method
  *
  * <p>
  * <p>
@@ -27,6 +27,10 @@ public class SerializationExample implements Serializable {
     }
 
     public static SerializationExample getInstance() {
+        return ObjectCreator.INSTANCE;
+    }
+
+    protected  Object readResolve(){
         return ObjectCreator.INSTANCE;
     }
 }

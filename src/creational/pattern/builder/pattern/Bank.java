@@ -1,13 +1,6 @@
 package creational.pattern.builder.pattern;
 
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
 /**
  * Builder pattern is used to reduce the complexity of object creation.Just think that you class with value
  * and you you are using constructor to initialize the value. in this case we have to very conscious while creating on object
@@ -43,18 +36,21 @@ class Bank {
      * This method is used to display the Bank details
      */
     public void show(){
+        if (accountNumber!=0)
+            System.out.println("Account Number "+accountNumber);
         if (accountName!=null)
             System.out.println("Account name "+accountName);
         if (bankName!=null)
             System.out.println("Bank name "+bankName);
         if (ifscCode!=null)
-            System.out.println("IFSC CODE "+ifscCode);
+            System.out.println("IFSC Code "+ifscCode);
         if (branch!=null)
             System.out.println("Branch "+branch);
 
     }
 
     public static class BankBuilder{
+
         private int accountNumber;
         private String accountName;
         private String bankName;

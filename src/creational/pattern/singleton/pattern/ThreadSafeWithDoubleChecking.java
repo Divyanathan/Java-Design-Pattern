@@ -24,7 +24,9 @@ public class ThreadSafeWithDoubleChecking {
     public static ThreadSafeWithDoubleChecking getInstance() {
         if (mInstance == null) {
             synchronized (ThreadSafeWithDoubleChecking.class) {
-                mInstance = new ThreadSafeWithDoubleChecking();
+                if (mInstance == null) {
+                    mInstance = new ThreadSafeWithDoubleChecking();
+                }
             }
         }
         return mInstance;

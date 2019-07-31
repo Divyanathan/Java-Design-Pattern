@@ -9,7 +9,7 @@ public class AnyWhereWorks extends HttpHelper {
 
     @Override
     String getBaseUrl() {
-        return "https://my.setmore.com";
+        return "https://my.anywhere.com";
     }
 
     @Override

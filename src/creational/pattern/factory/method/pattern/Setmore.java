@@ -9,7 +9,7 @@ public class Setmore extends HttpHelper {
 
     @Override
     String getBaseUrl() {
-        return "https://my.anywhere.com";
+        return "https://my.setmore.com";
     }
 
     @Override

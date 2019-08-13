@@ -1,4 +1,5 @@
 package creational.pattern.abstarct.factory.pattern;
 
-public class AbstarctFactoryPattern {
+public enum  GoogleProject {
+    FACEBOOK, WHATSAPP
 }

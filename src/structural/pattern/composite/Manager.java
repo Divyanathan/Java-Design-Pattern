@@ -17,7 +17,7 @@ public class Manager extends Employee {
     @Override
     public void assignWork(Employee pManager, Work pWork) {
         System.out.println(this.name + " has assigned to Work on '" + pWork.getlProject() + "' by manager " + pManager.getName());
-        System.out.println(" --------- "+pManager.name + " distributing Work to his Team mates  --------\n");
+        System.out.println(" --------- "+this.name + " distributing Work to his Teammates  --------\n");
         List<String> totalWork = pWork.getlTask();
         Employee lEngineer;
         Work lWork;
@@ -26,10 +26,14 @@ public class Manager extends Employee {
                 break;
             }
             System.out.println("Assigning " + pWork.getlTask().get(i) + " to " + mManagingEngineer.get(i).getName() + " under " + pWork.getlProject());
-            lEngineer = mManagingEngineer.get(i);
-            lWork     = new Work(pWork.getlProject());
-            lWork     .addTask(pWork.getlTask().get(i));
-            lEngineer  .assignWork(this,lWork);
+            if (mManagingEngineer.get(i) instanceof Manager){
+                mManagingEngineer.get(i).assignWork(this,pWork);
+            }else {
+                lEngineer = mManagingEngineer.get(i);
+                lWork = new Work(pWork.getlProject());
+                lWork.addTask(pWork.getlTask().get(i));
+                lEngineer.assignWork(this, lWork);
+            }
 
         }
     }

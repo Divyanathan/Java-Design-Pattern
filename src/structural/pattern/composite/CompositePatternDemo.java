@@ -10,6 +10,7 @@ public class CompositePatternDemo {
         Engineer Divyanathan  = new Engineer(1005, "Divyanathan", "Software Engineer");
         Engineer Prashanth    = new Engineer(1006, "Prashanthen", "Testing Engineer");
         Engineer Arun         = new Engineer(1007, "Arun", "Testing Engineer");
+        Manager  Kevin        = new Manager(1008, "Kevin", "CEO");
 
         Mani.manageEngineer(AbhiShek);
         Mani.manageEngineer(Simon);
@@ -18,6 +19,8 @@ public class CompositePatternDemo {
         Mani.manageEngineer(Prashanth);
         Mani.manageEngineer(Arun);
 
+        Kevin.manageEngineer(Mani);
+
         Work lWork = new Work(Project.SETMORE);
         lWork.addTask("Appointment task");
         lWork.addTask("Chat task");
@@ -25,9 +28,8 @@ public class CompositePatternDemo {
         lWork.addTask("Feed task");
         lWork.addTask("Testing Setmore build task");
         lWork.addTask("Testing AW build task");
-
-        Mani.assignWork(Mani,lWork);
-        Mani.performWork();
+        Kevin.assignWork(Kevin,lWork);
+        Kevin.performWork();
 
     }
 }

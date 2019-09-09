@@ -1,4 +1,4 @@
-package creational.pattern.proxy.pattern;
+package structural.pattern.proxy;
 
 public interface Operation {
     void create();
